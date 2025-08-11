@@ -2,7 +2,9 @@ import 'dotenv/config';
 import * as env from 'env-var'; 
 
 export const envs = {
-  port: env.get('PORT').default('3000').asPortNumber(),
-  email: env.get('EMAIL').required().asEmailString(),
-  emailPassword: env.get('EMAIL_PASSWORD').required().asString(),
+  PORT: env.get('PORT').default('3000').asPortNumber(),
+  MAILER_SERVICE: env.get('MAILER_SERVICE').required().asString(),
+  EMAIL: env.get('EMAIL').required().asEmailString(),
+  EMAIL_SECRET_KEY: env.get('EMAIL_SECRET_KEY').required().asString(),
+  PROD: env.get('PROD').required().asBool(),
 };
